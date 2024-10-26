@@ -213,7 +213,7 @@ export class NamedPipe implements Deno.Conn {
 export async function connect(name: string) {
   return new NamedPipe(
     name,
-    (await Storage.CreateFileAAsync(
+    (await Storage.CreateFileWAsync(
       name,
       (Storage.FILE_GENERIC_READ | Storage.FILE_GENERIC_WRITE) >>> 0,
       0,
